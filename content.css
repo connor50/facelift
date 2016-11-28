@@ -1,0 +1,97 @@
+body {
+  background: #fff !important;
+}
+
+body:not(.mashed) {
+  display: none;
+
+}
+
+body,
+body * {
+  display: block;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: sans-serif !important;
+  font-size: 16px !important;
+}
+
+p, h2 {
+  font-family: sans-serif;
+  line-height: 138% !important;
+  color: #000;
+}
+
+a {
+  color: blue !important;
+  text-decoration: underline !important;
+}
+
+a:visited {
+  color: indigo !important;
+}
+
+i, em, bold, span {
+  display: inline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+header a {
+  max-width: 100%;
+  padding: calc(3rem + 2vw);
+  margin: 0 auto;
+}
+
+body > article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 2rem .5rem;
+}
+
+body > article img {
+  width: 100%;
+}
+
+body > article h2 {
+  margin: 2rem 0 1rem;
+  font-size: calc(1rem + 2vw);
+}
+
+body > article .date {
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+body > article p + p {
+  margin-top: 1rem;
+}
+
+related- {
+  padding: 3rem 2rem 4rem;
+  max-width: 720px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 2rem auto 0;
+}
+
+related- * + * {
+  margin-top: .32rem !important;
+}
