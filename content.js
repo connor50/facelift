@@ -2,35 +2,32 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const n = (template) => document.createRange().createContextualFragment(template);
 
+const rm = (child) => child.parentNode.removeChild(child);
 const $body = document.body;
 
-// Extract content from loaded article
-const $intro = $('#content .full_intro');
-const $story = $('#content .fullstory');
-const $recent = $('#content .advanced-recent-posts');
+// remove items
+const $left = $('#leftCol');
+rm($left);
 
-// Clear initial body content
+const $right = $('#rightCol');
+rm($right);
+
+const $profilebtns = $('#u_0_2').firstElementChild;
+rm($profilebtns);
+
+// set zoom for webpage
+document.body.style.zoom = 1.2;
+
+
+const ads = $$('._4ikz');
+ads.filter(x => x.textContent.match('Suggested Post'))
+.map(rm);
+
+const $content = $('#contentArea');
+const $topbar = $('#pagelet_bluebar');
+
+
 $body.innerHTML = '';
 
-// Filter out useless p tags from full story
-[...$story.querySelectorAll('p')]
-  .filter(x => x.innerHTML == '&nbsp;' || x.innerHTML == '')
-  .forEach(x => x.parentNode.removeChild(x));
-
-// Put title and date after article image
-$story.firstElementChild.after(n($intro.innerHTML));
-
-// Compile new article content
-const $article = n(`
-  <header>
-    <a href='/'>
-      <img src="http://www.thedailymash.co.uk/images/logo_wide_nonews.jpg" alt="" />
-    </a>
-  </header>
-  <article>${$story.innerHTML}</article>
-  <related->${$recent.innerHTML}</related->
-`);
-
-// Append new content to body
-$body.appendChild($article);
-$body.classList.add('mashed');
+$body.appendChild($topbar)
+$body.appendChild($content)
