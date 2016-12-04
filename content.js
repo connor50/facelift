@@ -31,3 +31,5 @@ $body.innerHTML = '';
 
 $body.appendChild($topbar)
 $body.appendChild($content)
+
+$body.classList.add('ready')

@@ -1,5 +1,11 @@
 body {
   background: white !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+body:not(.ready) {
+  display: none;
 }
 
 #contentCol {
